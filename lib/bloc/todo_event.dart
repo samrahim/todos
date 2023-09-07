@@ -14,23 +14,6 @@ class AddTodoEvent extends TodoEvent {
   List<Object> get props => [title, subtitle, time];
 }
 
-class UpdateTodoEvent extends TodoEvent {
-  final int id;
-  final String? title;
-  final String? subtitle;
-  final DateTime? time;
-
-  UpdateTodoEvent({
-    required this.title,
-    required this.subtitle,
-    required this.time,
-    required this.id,
-  });
-
-  @override
-  List<Object> get props => [id];
-}
-
 class DeleteTodoEvent extends TodoEvent {
   final int id;
   DeleteTodoEvent(this.id);

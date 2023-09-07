@@ -40,9 +40,7 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
           emit(OperationFailed());
         }
       }
-      // if (event is UpdateTodoEvent) {
-      //   repository.updateTodo("UPDATE 'todos1' SET 'title'='${event.title}'");
-      // }
+
       if (event is GetTodoByIdEvent) {
         List<Map> list = await repository.getTodos("SELECT * FROM 'todos1'");
         Map mp = await repository.getTodobyid(list, event.id);
